@@ -1,0 +1,22 @@
+<template>   
+    <lightning-card>
+        <lightning-tabset variant="vertical">
+            <lightning-tab label="Personal Details">
+                <lightning-input label="Name" onchange={userName}></lightning-input>
+                <lightning-button label="Next" onclick={educationDetails}></lightning-button>
+            </lightning-tab>
+
+            <lightning-tab label="Education Details">
+                <lightning-input label="Degree" onchange={userDegree}></lightning-input>
+                <lightning-button label="Previous" oncclick={personalDetails}></lightning-button>
+                <lightning-button label="Next" onclick={communicationDetails}></lightning-button>
+            </lightning-tab>
+
+            <lightning-tab label="Communication Details">
+                <lightning-input label="Permanent Address" onchange={userAddress}></lightning-input>
+                <lightning-button label="Previous" onclick={educationDetails}></lightning-button>
+                <lightning-button label="Save" onclick={saveDetails}></lightning-button>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

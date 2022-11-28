@@ -1,0 +1,9 @@
+<template>
+    <p><b>Accounts</b></p><br />
+    <lightning-card title="Account" icon-name="standard:account"><br />
+        <lightning-input name="name" label="Name" onchange={handleNameChange}></lightning-input><br />
+        <lightning-input label="Phone" onchange={handlePhoneChange}></lightning-input><br />
+        <lightning-input label="Description" onchange={handleDescChange}></lightning-input><br />
+        <lightning-button type="submit" label="save" variant="brand" onclick={handleClick} ></lightning-button>
+    </lightning-card>
+</template>

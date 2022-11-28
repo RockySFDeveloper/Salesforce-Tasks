@@ -1,0 +1,9 @@
+<template>
+    <div>
+        <lightning-input type="text" label="Enter any text" value={toParent} onchange={handleChild}></lightning-input>
+    </div>
+
+    <div>
+        <lightning-button variant="brand" label="Call Super" onclick={handleClick} ></lightning-button>
+    </div>
+</template>

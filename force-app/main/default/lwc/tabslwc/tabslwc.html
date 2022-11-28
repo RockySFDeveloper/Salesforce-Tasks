@@ -1,0 +1,30 @@
+<template>    
+    <lightning-card title="Lightning Tab Navigation With Buttons (lwcFactory.com)">
+        <!--Group Of lightning Tab Set-->
+    <lightning-tabset active-tab-value={activeTab}>
+         <div class="slds-m-around_x-small">
+            <lightning-tab label="Account"  value="1" onactive={handleActive}>
+                Account Dummy Data...                
+            </lightning-tab>
+           
+            <lightning-tab label="Contact"  value="2" onactive={handleActive}>
+                Contact Dummy Data...
+            </lightning-tab>
+           
+            <lightning-tab label="Case"  value="3" onactive={handleActive}>
+                Case Dummy Data...
+            </lightning-tab>
+           
+            <lightning-tab label="Opportunity"  value="4" onactive={handleActive}>
+                Opportunity Dummy Data...
+            </lightning-tab>
+        </div>
+    </lightning-tabset>
+    
+    <!--Navigation Button on card footer-->
+    <div slot="footer">      
+        <lightning-button variant="brand" label="Back" disabled={bDisableBackBtn} onclick={goBack}></lightning-button>
+        <lightning-button variant="brand" label="Next" disabled={bDisableNextBtn} onclick={goNext} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</lightning-card>
+</template>

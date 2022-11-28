@@ -1,0 +1,12 @@
+<template>
+    <div if:true={showPayment}>
+        <lightning-card icon-name="standard:payment_gateway">
+            <h3 slot="title">
+                <font class="fontStyle" style="color: rgb(0, 0, 0);">Stripe Payment</font>
+            </h3>
+            <lightning-input label="Enter Last 4 digit of Account Number" onchange={handleAccNumber} max-length ="4" class="slds-size_1-of-2 slds-align_absolute-center"></lightning-input><br/>
+            <lightning-input label="Amount(In Rupees)" value={opportunityAmount} class="slds-size_1-of-2 slds-align_absolute-center" disabled=true></lightning-input><br/>
+            <lightning-button label="Submit" onclick={handleSubmit} class="slds-align_absolute-center"></lightning-button>
+        </lightning-card>
+    </div>
+</template>

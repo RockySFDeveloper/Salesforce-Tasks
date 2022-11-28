@@ -1,0 +1,52 @@
+<template>    
+    <lightning-card title="Employee Information System" icon-name="standard:Employee_Information_System__c">
+       
+    <lightning-tabset variant="vertical" active-tab-value={activeTab}>
+         <div class="slds-m-around_x-small">
+            
+            <lightning-tab label="Basic Info"  value="1" onactive={handleActive}>
+                <lightning-input label="Name" onchange={handleNameChange}></lightning-input><br/>
+                <lightning-input label="Age" onchange={handleAgeChange}></lightning-input><br/>
+                <lightning-input label="Phone Number" onchange={handlePhoneChange}></lightning-input><br/> 
+                <lightning-input label="Email" onchange={handleEmailChange}></lightning-input><br/>               
+            </lightning-tab>
+           
+            <lightning-tab label="Others"  value="2" onactive={handleActive}>
+                <lightning-input label="Experience" onchange={handleExperienceChange} type="checkbox" ></lightning-input><br/>
+                <lightning-combobox name="Skills" label="Skills" value={value} options={options} onchange={handleSkillsChange}></lightning-combobox><br/>
+                <template for:each={allValues} for:item="val">
+                    <lightning-pill key={val} name={val} label={val} onremove={handleRemove}></lightning-pill>
+                </template>               
+            </lightning-tab>
+           
+            <lightning-tab label="Verification"  value="3" onactive={handleActive}>
+                <lightning-input label="Aadhar No" onchange={handleAadharChange}></lightning-input><br/>
+                <lightning-input label="Pan" onchange={handlePanChange}></lightning-input><br/>
+                <lightning-input label="Uan" onchange={handleUanChange}></lightning-input><br/>
+            </lightning-tab>
+
+            <lightning-tab label="Document"  value="4" onactive={handleActive}>
+                <lightning-input type="file" label="Upload File" onchange={handleUploadChange} >  
+                </lightning-input>
+            </lightning-tab>   
+            
+            <template if:true={employees.Experienced__c}>
+            <lightning-tab label="Previous Experience"  value="5" onactive={handleActive}>
+                <lightning-input label="Previous Company" onchange={handlePreviousCompany}></lightning-input><br/>
+                <lightning-input label="Designation" onchange={handleDesignationChange}></lightning-input><br/>
+                <lightning-input label="Years of Experience" onchange={handleYearOFExperienceChange}></lightning-input><br/> 
+            </lightning-tab>
+        </template>
+            
+        </div>
+    </lightning-tabset> 
+    
+    <div slot="footer">
+        <c-toast-calling></c-toast-calling>   
+        <c-emp-api-l-w-c></c-emp-api-l-w-c>
+        <lightning-button variant="brand" label="Previous" disabled={disableBackButton} onclick={goBack}></lightning-button>
+        <lightning-button variant="brand" label="Next" disabled={disableNextButton} onclick={goNext} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Save"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</lightning-card>
+</template>

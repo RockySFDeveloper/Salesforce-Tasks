@@ -1,0 +1,10 @@
+<template>
+    <c-lwc_streaming_api 
+    channel="/topic/NewContactCreated" 
+    api-version="45.0" 
+    debug=true
+    onmessage={handleMessage} 
+    onerror={handleError} 
+    class="lwc_streaming_api-1">
+</c-lwc_streaming_api>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Explore Opportunity" icon-name="standard:opportunity" class="main">
+
+        <div if:true={errorMsg} style="margin-left: 3%;">
+            <p style="color: red;">{errorMsg}</p>
+        </div>
+
+        <div class="slds-size_Medium">
+            <lightning-input type="text" label="Enter Opportunity Name"  onchange={handleOpportunityName} >                                       
+            </lightning-input><br/>
+            <lightning-input type="text" label="Stage Name"  onchange={handleStageName} >                                       
+            </lightning-input><br/>
+        </div>
+                  
+        <lightning-button label="Search"  variant="brand"  onclick={handleSearch} class="slds-align_absolute-center"></lightning-button>
+            
+        <div if:true={searchData}>
+            <lightning-datatable data={searchData} columns={columns} key-field="id" hide-checkbox-column="true"></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

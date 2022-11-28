@@ -1,0 +1,32 @@
+<template>    
+    <lightning-card title="Student Information System" icon-name="standard:contact">
+       
+    <lightning-tabset variant="vertical" active-tab-value={activeTab}>
+         <div class="slds-m-around_x-small">
+            
+            <lightning-tab label="Basic Info"  value="1" onactive={handleActive}>
+                <lightning-input label="Name" onchange={handleNameChange}></lightning-input><br/>
+                <lightning-input label="Phone Number" onchange={handlePhoneChange}></lightning-input><br/> 
+                <lightning-input label="Email" onchange={handleEmailChange}></lightning-input><br/>               
+            </lightning-tab>
+           
+            <lightning-tab label="Education"  value="2" onactive={handleActive}>
+                <lightning-input label="College" onchange={handleCollegeChange}></lightning-input><br/>
+                <lightning-input label="Passed Out" onchange={handlePassedOutChange}></lightning-input><br/>
+            </lightning-tab>
+           
+            <lightning-tab label="Feedback"  value="3" onactive={handleActive}>
+                <lightning-input label="Description" onchange={handleDescChange}></lightning-input><br/>
+            </lightning-tab>
+           
+        </div>
+    </lightning-tabset>
+    
+    <div slot="footer">
+        <c-toast-calling></c-toast-calling>   
+        <lightning-button variant="brand" label="Previous" disabled={disableBackButton} onclick={goBack}></lightning-button>
+        <lightning-button variant="brand" label="Next" disabled={disableNextButton} onclick={goNext} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Save"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <p>Records Processed</p>
+    <div class="slds-hide">
+        <c-emp-api-l-w-c onbatchprocessfromchild ={handlRecordsPorcessing}></c-emp-api-l-w-c>
+    </div>
+    <lightning-output-field label="Records Porcessed" value={recordsProcessed}></lightning-output-field><br/>
+    <lightning-progress-bar value={recordsProcessed} size="large"></lightning-progress-bar>
+</template>

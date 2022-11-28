@@ -1,0 +1,39 @@
+<template >
+    <div if:true={initialComponentHide} class="scrollable">       
+        <div if:true={hideComponentIfBatchFails} style="height:50px; width:490px">
+            <div if:true={hideComponentFlag} class="slds-card ">
+                <lightning-card >
+                    <h3 slot="title">
+                        <font class="fontStyle" style="color: rgb(0, 0, 0);"> &nbsp; Batch Progress</font>
+                    </h3>
+        
+                    <div if:true={correctRecordflag} class="slds-grid slds-gutters slds-align_absolute-center">
+                
+                        <h3><font style="color: rgb(0, 0, 0);">Completed {percentageOfProcess} %</font></h3>&nbsp; &nbsp; &nbsp;
+                        <lightning-spinner alternative-text="Loading" size="small" variant="brand"></lightning-spinner><br/>                        
+                    </div>
+
+                    <div if:true={correctRecordflag} class="slds-progress-bar__value slds-progress-bar_x-small" >           
+                        <lightning-progress-bar value={processedPercent} onchange={handleToast} size="medium" variant="circular" style="height:50px; width:400px"></lightning-progress-bar>
+                    </div>
+                </lightning-card>           
+            </div>         
+        </div>
+        
+        <div if:false={hideComponentIfBatchFails} class ="scrollable" >  
+            <div style="height:50px; width:490px">
+                <div class="slds-card ">
+                    <lightning-card >
+
+                        <div class="slds-grid slds-gutters slds-align_absolute-center">          
+                            <h3 slot="title"> 
+                                <font style="color: rgb(252, 3, 3);">Batch Failed due to {getErrorMessage}</font>                     
+                            </h3>                        
+                        </div>
+    
+                    </lightning-card>
+                </div>               
+            </div>
+        </div>           
+    </div>
+</template>

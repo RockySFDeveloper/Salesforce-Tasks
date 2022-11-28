@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Opportunities">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="All" onclick={allStages}></lightning-button>
+        </div>
+
+        <template for:each={oppresult} for:item="rslt">
+            <c-wired-opportunities key={rslt} ></c-wired-opportunities>
+        </template>
+
+    </lightning-card>
+</template>

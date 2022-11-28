@@ -1,0 +1,27 @@
+.spinnerHolder{
+    position: relative !important;
+    display: inline-block !important;
+    width: 2% !important;
+}
+.slds-spinner_container {
+    position: relative !important ;
+    display: inline-block !important;
+    width: 2% !important;
+}
+.scrollable {
+    height: 50px;
+    width: auto;
+    position: fixed;
+    right: -18px;
+    bottom: 100px;
+    z-index: 50;
+}
+
+
+div{
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -2px;
+    margin-bottom: -5px;
+}

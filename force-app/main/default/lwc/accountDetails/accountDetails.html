@@ -1,0 +1,33 @@
+<template>    
+    <lightning-card title="Student Information System">
+       
+    <lightning-tabset variant="vertical" active-tab-value={activeTab}>
+         <div class="slds-m-around_x-small">
+            <lightning-tab label="Personal Details"  value="1" onchange={handleActive}>
+                <lightning-input label="Name" ></lightning-input><br/>
+                <lightning-input label="Phone Number" ></lightning-input><br/> 
+                <lightning-input label="Email" ></lightning-input><br/>               
+            </lightning-tab>
+           
+            <lightning-tab label="Communication Details"  value="2" onchange={handleActive}>
+                <lightning-input label="College" ></lightning-input><br/>
+                <lightning-input label="Degree" ></lightning-input><br/>
+                <lightning-input label="Passed Out" ></lightning-input><br/>
+            </lightning-tab>
+           
+            <lightning-tab label="Feedback"  value="3" onchange={handleActive}>
+                <lightning-input label="Permanent Address" ></lightning-input><br/>
+                <lightning-input label="Communication Address" ></lightning-input><br/>
+            </lightning-tab>
+           
+        </div>
+    </lightning-tabset>
+    
+    <div slot="footer">   
+        <c-toast-calling></c-toast-calling>
+        <lightning-button variant="brand" label="Previous" disabled={bDisableBackBtn} onclick={goBack}></lightning-button>
+        <lightning-button variant="brand" label="Next" disabled={bDisableNextBtn} onclick={goNext} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Save"  onclick={showSuccessNotification} class="slds-m-left_x-small"></lightning-button>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Opportunity Inactive" icon-name="standard:opportunity">
+
+        <div if:true={errorMsg} style="margin-left: 3%;">
+            <p style="color: red;">{errorMsg}</p>
+        </div>
+
+        <div class="slds-size_Medium">
+        <lightning-input type="text" label="Enter Age of Opportunities"  onchange={handleOpportunityAge} >                                       
+        </lightning-input><br/>
+        </div>
+                  
+        <lightning-button label="Search"  variant="brand"  onclick={handleSearch} class="slds-align_absolute-center"></lightning-button>
+        <lightning-button label="Closed Lost"  variant="brand"  onclick={handleClosedLost} class="slds-align_absolute-center"></lightning-button>
+            
+        <div if:true={searchData}>
+            <lightning-datatable data={searchData} columns={columns} key-field="id" hide-checkbox-column="true"></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

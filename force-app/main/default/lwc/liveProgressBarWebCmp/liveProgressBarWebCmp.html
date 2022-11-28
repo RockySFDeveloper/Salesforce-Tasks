@@ -1,0 +1,23 @@
+<template>
+    <div class={cssClassNames}>
+            <div class="slds-box slds-p-around_none">
+                <div
+                    class="slds-p-left_medium slds-p-top_small slds-p-bottom_small recordContainer slds-text-heading_small slds-text-title_bold">
+                    {sectionHeader}
+                </div>
+
+                    <div class={progressHolderClass}>
+                        
+                        <div>
+                            <p>
+                                <lightning-formatted-text value={progressText}></lightning-formatted-text>
+                            </p>
+                        </div>
+                        
+                        <lightning-progress-bar value={progressPercentValue} size={size} variant={variant}>
+                        </lightning-progress-bar>
+                    </div>
+                </div>
+            </div>
+    </div>
+</template>

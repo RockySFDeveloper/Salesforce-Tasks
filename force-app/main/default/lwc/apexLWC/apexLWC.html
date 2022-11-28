@@ -1,0 +1,18 @@
+<template>
+    <p><b>Contact</b></p>
+    <!--- table>
+        <template for:each={addBulkContacts} for:item="gettingContactRecords">
+            <tr key = {gettingContactRecords.Id} >   
+                <td>{gettingContactRecords.LastName}</td>
+                <td>{gettingContactRecords.Phone}</td>
+            </tr>          
+    </template>
+    </table -->
+
+    <template for:each={bulkContacts} for:item="gettingContactRecords">
+        <lightning-card key = {gettingContactRecords.Id}  >
+          <p>{gettingContactRecords.LastName}  </p> 
+        </lightning-card>          
+    </template>
+    <lightning-button label="Get Contacts" onclick={getContacts}></lightning-button>
+ </template>
